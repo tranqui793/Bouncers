@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class BounceApp
 {
-    private LinkedList<Bouncable> bouncers;
+    private LinkedList<Bouncable> bouncers =new LinkedList<>();
     private static final BoucableSingleton bou=BoucableSingleton.getInstance();
     // Autres attributs
     public BounceApp() {
