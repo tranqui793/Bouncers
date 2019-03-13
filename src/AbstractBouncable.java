@@ -5,6 +5,7 @@ public abstract class AbstractBouncable implements Bouncable{
     private boolean x=false,y=false;
     private int size;
     private Point bouncableCoordinate;
+    private int speed;
     protected Color color ;
 
     private static final Random rand = new Random();
@@ -14,6 +15,7 @@ public abstract class AbstractBouncable implements Bouncable{
     public AbstractBouncable(){
         bouncableCoordinate=new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
         size=radius;
+        speed = rand.nextInt(20);
     }
     @Override
     public void draw() {
@@ -40,17 +42,17 @@ public abstract class AbstractBouncable implements Bouncable{
             y=true;
         }
         if(!x){
-            bouncableCoordinate.x = ++oldX;
+            bouncableCoordinate.x = ++oldX + speed;
         }else
         {
-            bouncableCoordinate.x = --oldX;
+            bouncableCoordinate.x = --oldX - speed;
 
         }
         if(!y){
-            bouncableCoordinate.y = ++oldY;
+            bouncableCoordinate.y = ++oldY + speed;
         }else
         {
-            bouncableCoordinate.y = --oldY;
+            bouncableCoordinate.y = --oldY - speed;
 
         }
     }

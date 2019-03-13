@@ -12,7 +12,7 @@ public class SquareBordered extends AbstractBouncable {
 
             @Override
             public void display(Graphics2D g, Bouncable b) {
-                g.setStroke(new BasicStroke(2));
+                g.setStroke(new BasicStroke(1));
                 g.setColor(b.getColor());
                 g.draw(b.getShape());
 
