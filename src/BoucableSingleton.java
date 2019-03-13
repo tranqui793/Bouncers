@@ -17,7 +17,7 @@ public class BoucableSingleton implements Displayer {
 
         bouncableFrame.getContentPane().add(bouncableJPanel);
         bouncableFrame.setResizable(true);
-        bouncableFrame.setMinimumSize(new Dimension(100, 100));
+        bouncableFrame.setMinimumSize(new Dimension(PREFERED_SIZE_FRAME, PREFERED_SIZE_FRAME));
 
         bouncableFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         bouncableFrame.pack();

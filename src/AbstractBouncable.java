@@ -2,7 +2,8 @@ import java.awt.*;
 import java.util.Random;
 
 public abstract class AbstractBouncable implements Bouncable{
-    private int x,y,size;
+    private boolean x=false,y=false;
+    private int size;
     private Point bouncableCoordinate;
     protected Color color ;
 
@@ -13,10 +14,6 @@ public abstract class AbstractBouncable implements Bouncable{
     public AbstractBouncable(){
         bouncableCoordinate=new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
         size=radius;
-        while (x == 0 && y == 0) {
-            x = rand.nextInt(4) - 1;
-            y = rand.nextInt(4) - 1;
-        }
     }
     @Override
     public void draw() {
@@ -25,44 +22,37 @@ public abstract class AbstractBouncable implements Bouncable{
 
     @Override
     public void move() {
-
         int oldX = bouncableCoordinate.x;
         int oldY = bouncableCoordinate.y;
 
-        if (oldX < 0) {
-            x *= -1;
+        if (oldX <1) {
+            x=false;
         }
         if (oldX > display.getWidth() - radius) {
-            bouncableCoordinate.x -= (bouncableCoordinate.x + radius - display.getWidth());
-            if (x != 0) {
-                x *= -1;
-            } else {
-                x = -1;
-            }
+        x=true;
         }
 
-        if (oldY < 0) {
-            bouncableCoordinate.y -= (bouncableCoordinate.y);
-            if (y != 0) {
-                y *= -1;
-            } else {
-                y = -1;
-            }
+        if (oldY < 1) {
+        y=false;
         }
         if (oldY > display.getHeight() - radius)
-            while (x == 0 && y == 0) {
-            this.x = rand.nextInt(4) - 1;
-            this.y = rand.nextInt(4) - 1;
-        } {
-            bouncableCoordinate.y -= (bouncableCoordinate.y + radius - display.getHeight());
-            if (y != 0) {
-                y *= -1;
-            } else {
-                y = -1;
-            }
+        {
+            y=true;
         }
-        bouncableCoordinate.x += x;
-        bouncableCoordinate.y += y;
+        if(!x){
+            bouncableCoordinate.x = ++oldX;
+        }else
+        {
+            bouncableCoordinate.x = --oldX;
+
+        }
+        if(!y){
+            bouncableCoordinate.y = ++oldY;
+        }else
+        {
+            bouncableCoordinate.y = --oldY;
+
+        }
     }
     @Override
     public Color getColor(){
