@@ -2,13 +2,14 @@ import java.awt.*;
 import java.awt.geom.Ellipse2D;
 
 public class CircleBordered extends AbstractBouncable {
-    public CircleBordered(){
+    public CircleBordered() {
         super();
-        this.color=Color.green;
+        this.color = Color.green;
     }
+
     @Override
     public Renderable getRenderer() {
-        return new Renderable(){
+        return new Renderable() {
 
             @Override
             public void display(Graphics2D g, Bouncable b) {
@@ -22,7 +23,7 @@ public class CircleBordered extends AbstractBouncable {
 
     @Override
     public Shape getShape() {
-        Point p=getBouncableCoordinate();
-        return new Ellipse2D.Double(p.x,p.y,getSize(),getSize());
+        Point p = getBouncableCoordinate();
+        return new Ellipse2D.Double(p.x, p.y, getSize(), getSize());
     }
 }

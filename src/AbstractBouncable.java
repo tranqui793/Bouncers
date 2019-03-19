@@ -1,25 +1,26 @@
 import java.awt.*;
 import java.util.Random;
 
-public abstract class AbstractBouncable implements Bouncable{
-    private boolean x=false,y=false;
+public abstract class AbstractBouncable implements Bouncable {
+    private boolean x = false, y = false;
     private int size;
     private Point bouncableCoordinate;
     private int speed;
-    protected Color color ;
+    protected Color color;
 
     private static final Random rand = new Random();
-    private int radius =rand.nextInt(35) + 5;
-    private static final BoucableSingleton display=BoucableSingleton.getInstance();
+    private int radius = rand.nextInt(35) + 5;
+    private static final BoucableSingleton display = BoucableSingleton.getInstance();
 
-    public AbstractBouncable(){
-        bouncableCoordinate=new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
-        size=radius;
-        speed = rand.nextInt(20);
+    public AbstractBouncable() {
+        bouncableCoordinate = new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
+        size = radius;
+        speed = rand.nextInt(5);
     }
+
     @Override
     public void draw() {
-        getRenderer().display(display.getGraphics(),this);
+        getRenderer().display(display.getGraphics(), this);
     }
 
     @Override
@@ -27,37 +28,35 @@ public abstract class AbstractBouncable implements Bouncable{
         int oldX = bouncableCoordinate.x;
         int oldY = bouncableCoordinate.y;
 
-        if (oldX <1) {
-            x=false;
+        if (oldX < 1) {
+            x = false;
         }
         if (oldX > display.getWidth() - radius) {
-        x=true;
+            x = true;
         }
 
         if (oldY < 1) {
-        y=false;
+            y = false;
         }
-        if (oldY > display.getHeight() - radius)
-        {
-            y=true;
+        if (oldY > display.getHeight() - radius) {
+            y = true;
         }
-        if(!x){
+        if (!x) {
             bouncableCoordinate.x = ++oldX + speed;
-        }else
-        {
+        } else {
             bouncableCoordinate.x = --oldX - speed;
 
         }
-        if(!y){
+        if (!y) {
             bouncableCoordinate.y = ++oldY + speed;
-        }else
-        {
+        } else {
             bouncableCoordinate.y = --oldY - speed;
 
         }
     }
+
     @Override
-    public Color getColor(){
+    public Color getColor() {
         return color;
     }
 

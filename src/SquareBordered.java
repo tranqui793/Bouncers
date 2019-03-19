@@ -2,13 +2,14 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 
 public class SquareBordered extends AbstractBouncable {
-    public SquareBordered(){
+    public SquareBordered() {
         super();
-        this.color=Color.red;
+        this.color = Color.red;
     }
+
     @Override
     public Renderable getRenderer() {
-        return new Renderable(){
+        return new Renderable() {
 
             @Override
             public void display(Graphics2D g, Bouncable b) {
@@ -22,7 +23,7 @@ public class SquareBordered extends AbstractBouncable {
 
     @Override
     public Shape getShape() {
-        Point p=getBouncableCoordinate();
-        return new Rectangle2D.Double(p.x,p.y,getSize(),getSize());
+        Point p = getBouncableCoordinate();
+        return new Rectangle2D.Double(p.x, p.y, getSize(), getSize());
     }
 }
