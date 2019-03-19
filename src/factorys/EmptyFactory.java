@@ -1,3 +1,9 @@
+package factorys;
+
+import view.Bouncable;
+import forms.CircleBordered;
+import forms.SquareBordered;
+
 public class EmptyFactory extends AbstractFactory {
     private static EmptyFactory ourInstance = new EmptyFactory();
 

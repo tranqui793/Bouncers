@@ -1,10 +1,14 @@
-import java.awt.*;
-import java.awt.geom.Ellipse2D;
+package forms;
 
-public class CircleFilled extends AbstractBouncable {
-    public CircleFilled() {
+import view.Bouncable;
+
+import java.awt.*;
+import java.awt.geom.Rectangle2D;
+
+public class SquareFilled extends AbstractBouncable {
+    public SquareFilled() {
         super();
-        this.color = Color.blue;
+        this.color = Color.orange;
     }
 
     @Override
@@ -23,6 +27,6 @@ public class CircleFilled extends AbstractBouncable {
     @Override
     public Shape getShape() {
         Point p = getBouncableCoordinate();
-        return new Ellipse2D.Double(p.x, p.y, getSize(), getSize());
+        return new Rectangle2D.Double(p.x, p.y, getSize(), getSize());
     }
 }

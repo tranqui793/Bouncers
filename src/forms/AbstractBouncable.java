@@ -1,3 +1,8 @@
+package forms;
+
+import view.BoucableSingleton;
+import view.Bouncable;
+
 import java.awt.*;
 import java.util.Random;
 

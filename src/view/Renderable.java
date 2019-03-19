@@ -1,3 +1,7 @@
+package view;
+
+import view.Bouncable;
+
 import java.awt.*;
 
 public interface Renderable {

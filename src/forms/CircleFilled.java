@@ -1,10 +1,15 @@
-import java.awt.*;
-import java.awt.geom.Rectangle2D;
+package forms;
 
-public class SquareFilled extends AbstractBouncable {
-    public SquareFilled() {
+import view.Bouncable;
+import view.Renderable;
+
+import java.awt.*;
+import java.awt.geom.Ellipse2D;
+
+public class CircleFilled extends AbstractBouncable {
+    public CircleFilled() {
         super();
-        this.color = Color.orange;
+        this.color = Color.blue;
     }
 
     @Override
@@ -23,6 +28,6 @@ public class SquareFilled extends AbstractBouncable {
     @Override
     public Shape getShape() {
         Point p = getBouncableCoordinate();
-        return new Rectangle2D.Double(p.x, p.y, getSize(), getSize());
+        return new Ellipse2D.Double(p.x, p.y, getSize(), getSize());
     }
 }
