@@ -1,3 +1,9 @@
+/**
+ * @file RenderableFill.java
+ * @authors Lagha Oussama & Robel Teklehaimanot
+ * @date 10.03.2019
+ */
+
 package view;
 
 import java.awt.*;
