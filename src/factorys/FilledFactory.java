@@ -1,5 +1,11 @@
+/**
+ * @file FilledFactory.java
+ * @authors Lagha Oussama & Robel
+ * @date 10.03.2019
+ */
 package factorys;
 
+import factorys.AbstractFactory;
 import view.Bouncable;
 import forms.CircleFilled;
 import forms.SquareFilled;

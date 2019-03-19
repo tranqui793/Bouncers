@@ -1,6 +1,9 @@
+/**
+ * @file Renderable.java
+ * @authors Lagha Oussama & Robel
+ * @date 10.03.2019
+ */
 package view;
-
-import view.Bouncable;
 
 import java.awt.*;
 

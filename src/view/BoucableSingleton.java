@@ -1,3 +1,8 @@
+/**
+ * @file BoucableSingleton.java
+ * @authors Lagha Oussama & Robel
+ * @date 10.03.2019
+ */
 package view;
 
 import javax.swing.*;
@@ -14,11 +19,10 @@ public class BoucableSingleton implements Displayer {
     private final int PREFERED_SIZE_FRAME = 700;
 
     private BoucableSingleton() {
-        bouncableFrame = new JFrame("Bouncers");
+        bouncableFrame = new JFrame();
         bouncableJPanel = new JPanel();
 
         bouncableFrame.getContentPane().add(bouncableJPanel);
-        bouncableFrame.setResizable(true);
         bouncableFrame.setMinimumSize(new Dimension(PREFERED_SIZE_FRAME, PREFERED_SIZE_FRAME));
 
         bouncableFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -26,6 +30,8 @@ public class BoucableSingleton implements Displayer {
         bufImg = (BufferedImage) bouncableJPanel.createImage(PREFERED_SIZE_FRAME, PREFERED_SIZE_FRAME);
         bufImg.createGraphics().drawImage(bufImg, 0, 0, null);
         bouncableFrame.pack();
+
+        bouncableFrame.setResizable(true);
 
     }
 

@@ -1,8 +1,12 @@
+/**
+ * @file AbstractBouncable.java
+ * @authors Lagha Oussama & Robel
+ * @date 10.03.2019
+ */
 package forms;
 
 import view.BoucableSingleton;
 import view.Bouncable;
-
 import java.awt.*;
 import java.util.Random;
 
@@ -12,15 +16,16 @@ public abstract class AbstractBouncable implements Bouncable {
     private Point bouncableCoordinate;
     private int speed;
     protected Color color;
-
+    private final int SIZE_BOUnCABLE_MAX = 35;
+    private final int SIZE_BOUNCABLE_MIN = 5;
     private static final Random rand = new Random();
-    private int radius = rand.nextInt(35) + 5;
+    private int radius = rand.nextInt(SIZE_BOUnCABLE_MAX) + SIZE_BOUNCABLE_MIN;
     private static final BoucableSingleton display = BoucableSingleton.getInstance();
 
     public AbstractBouncable() {
         bouncableCoordinate = new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
         size = radius;
-        speed = rand.nextInt(5);
+        speed = rand.nextInt(SIZE_BOUNCABLE_MIN);
     }
 
     @Override

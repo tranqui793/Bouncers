@@ -1,3 +1,8 @@
+/**
+ * @file EmptyFactory.java
+ * @authors Lagha Oussama & Robel
+ * @date 10.03.2019
+ */
 package factorys;
 
 import view.Bouncable;
