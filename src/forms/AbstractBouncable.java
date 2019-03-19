@@ -7,6 +7,8 @@ package forms;
 
 import view.BoucableSingleton;
 import view.Bouncable;
+import view.Renderable;
+
 import java.awt.*;
 import java.util.Random;
 
@@ -21,11 +23,13 @@ public abstract class AbstractBouncable implements Bouncable {
     private static final Random rand = new Random();
     private int radius = rand.nextInt(SIZE_BOUnCABLE_MAX) + SIZE_BOUNCABLE_MIN;
     private static final BoucableSingleton display = BoucableSingleton.getInstance();
+    private Renderable renderable;
 
-    public AbstractBouncable() {
+    public AbstractBouncable(Renderable r) {
         bouncableCoordinate = new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
         size = radius;
         speed = rand.nextInt(SIZE_BOUNCABLE_MIN);
+        renderable = r;
     }
 
     @Override
@@ -76,5 +80,9 @@ public abstract class AbstractBouncable implements Bouncable {
 
     public int getSize() {
         return size;
+    }
+
+    public Renderable getRenderer(){
+        return renderable;
     }
 }
