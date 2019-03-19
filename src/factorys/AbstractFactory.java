@@ -3,7 +3,7 @@ package factorys;
 import view.Bouncable;
 
 public abstract class AbstractFactory {
-    abstract Bouncable getCircle();
+    public abstract Bouncable getCircle();
 
-    abstract Bouncable getSquare();
+    public abstract Bouncable getSquare();
 }

@@ -15,12 +15,12 @@ public class EmptyFactory extends AbstractFactory {
     }
 
     @Override
-    Bouncable getCircle() {
+    public Bouncable getCircle() {
         return new CircleBordered();
     }
 
     @Override
-    Bouncable getSquare() {
+    public Bouncable getSquare() {
         return new SquareBordered();
     }
 }

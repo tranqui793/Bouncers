@@ -1,6 +1,7 @@
 package forms;
 
 import view.Bouncable;
+import view.Renderable;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;

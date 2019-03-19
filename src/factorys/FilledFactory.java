@@ -13,13 +13,14 @@ public class FilledFactory extends AbstractFactory {
 
     private FilledFactory() {
     }
+
     @Override
-    Bouncable getCircle() {
+    public Bouncable getCircle() {
         return new CircleFilled();
     }
 
     @Override
-    Bouncable getSquare() {
+    public Bouncable getSquare() {
         return new SquareFilled();
     }
 }
