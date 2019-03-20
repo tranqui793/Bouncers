@@ -1,6 +1,6 @@
 /**
  * @file AbstractBouncable.java
- * @authors Lagha Oussama & Robel
+ * @authors Lagha Oussama & Robel Teklehaimanot
  * @date 10.03.2019
  */
 package forms;
@@ -10,21 +10,24 @@ import view.Bouncable;
 import java.awt.*;
 import java.util.Random;
 
+/**
+ * classe representant un objet Bouncable
+ */
 public abstract class AbstractBouncable implements Bouncable {
-    private boolean x = false, y = false;
-    private int size;
-    private Point bouncableCoordinate;
-    private int speed;
-    protected Color color;
+
     private final int SIZE_BOUnCABLE_MAX = 35;
     private final int SIZE_BOUNCABLE_MIN = 5;
     private static final Random rand = new Random();
-    private int radius = rand.nextInt(SIZE_BOUnCABLE_MAX) + SIZE_BOUNCABLE_MIN;
-    private static final BoucableSingleton display = BoucableSingleton.getInstance();
+    private static final BoucableSingleton display = BoucableSingleton.getInstance();//instance unique
+
+    private boolean x = false, y = false;
+    private Point bouncableCoordinate;//les coordonnees de l'objet
+    private int speed;//la vitesse
+    protected Color color;
+    private int size = rand.nextInt(SIZE_BOUnCABLE_MAX) + SIZE_BOUNCABLE_MIN;
 
     public AbstractBouncable() {
-        bouncableCoordinate = new Point(rand.nextInt(display.getWidth() - radius), rand.nextInt(display.getHeight() - radius));
-        size = radius;
+        bouncableCoordinate = new Point(rand.nextInt(display.getWidth() - size), rand.nextInt(display.getHeight() - size));
         speed = rand.nextInt(SIZE_BOUNCABLE_MIN);
     }
 
@@ -41,14 +44,14 @@ public abstract class AbstractBouncable implements Bouncable {
         if (oldX < 1) {
             x = false;
         }
-        if (oldX > display.getWidth() - radius) {
+        if (oldX > display.getWidth() - size) {
             x = true;
         }
 
         if (oldY < 1) {
             y = false;
         }
-        if (oldY > display.getHeight() - radius) {
+        if (oldY > display.getHeight() - size) {
             y = true;
         }
         if (!x) {
@@ -70,9 +73,19 @@ public abstract class AbstractBouncable implements Bouncable {
         return color;
     }
 
+    /**
+     * permet de recupere les coordonnes de l'objets
+     * @return un Point qui contient X et Y du Bouncable
+     */
+
     public Point getBouncableCoordinate() {
         return bouncableCoordinate;
     }
+
+    /**
+     * permet de recupere la taille du Bouncable
+     * @return la taille
+     */
 
     public int getSize() {
         return size;

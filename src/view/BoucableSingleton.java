@@ -1,6 +1,6 @@
 /**
  * @file BoucableSingleton.java
- * @authors Lagha Oussama & Robel
+ * @authors Lagha Oussama & Robel Teklehaimanot
  * @date 10.03.2019
  */
 package view;
@@ -10,6 +10,10 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.image.BufferedImage;
 
+/**
+ * classe representant l'interface graphique de l'application
+ */
+
 public class BoucableSingleton implements Displayer {
     private static final BoucableSingleton singletonInstance = new BoucableSingleton();
 
@@ -18,6 +22,9 @@ public class BoucableSingleton implements Displayer {
     private BufferedImage bufImg;
     private final int PREFERED_SIZE_FRAME = 700;
 
+    /**
+     * constructeur de l'interface
+     */
     private BoucableSingleton() {
         bouncableFrame = new JFrame();
         bouncableJPanel = new JPanel();
@@ -34,6 +41,11 @@ public class BoucableSingleton implements Displayer {
         bouncableFrame.setResizable(true);
 
     }
+
+    /**
+     * recupere l'instance unique de l'interface
+     * @return l'unique interface graphique
+     */
 
     public static BoucableSingleton getInstance() {
         return singletonInstance;

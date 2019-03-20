@@ -1,6 +1,6 @@
 /**
  * @file Displayer.java
- * @authors Lagha Oussama & Robel
+ * @authors Lagha Oussama & Robel Teklehaimanot
  * @date 10.03.2019
  */
 package view;
@@ -10,16 +10,16 @@ import java.awt.event.KeyAdapter;
 
 public interface Displayer {
     /**
-     * permet de recuperer le width de notre jpanel
+     * permet de recuperer le width l'interface
      *
-     * @return le width de la Jpanel
+     * @return le width de l'interface
      */
     int getWidth();
 
     /**
-     * permet de recuperer le heigth de notre jpanel
+     * permet de recuperer le heigth de l'interface
      *
-     * @return le height de la Jpanel
+     * @return le height de l'interface
      */
 
     int getHeight();
@@ -33,7 +33,7 @@ public interface Displayer {
     Graphics2D getGraphics();
 
     /**
-     * dessine la Frame
+     * redessine la Frame
      */
 
     void repaint();

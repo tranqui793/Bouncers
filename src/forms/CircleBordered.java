@@ -1,6 +1,6 @@
 /**
  * @file CircleBordered.java
- * @authors Lagha Oussama & Robel
+ * @authors Lagha Oussama & Robel Teklehaimanot
  * @date 10.03.2019
  */
 package forms;
