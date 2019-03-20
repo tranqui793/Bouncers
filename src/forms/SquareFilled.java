@@ -9,9 +9,8 @@ import view.Bouncable;
 import view.Renderable;
 
 import java.awt.*;
-import java.awt.geom.Rectangle2D;
 
-public class SquareFilled extends AbstractBouncable {
+public class SquareFilled extends Square {
     public SquareFilled() {
         super();
         this.color = Color.orange;
@@ -30,9 +29,4 @@ public class SquareFilled extends AbstractBouncable {
         };
     }
 
-    @Override
-    public Shape getShape() {
-        Point p = getBouncableCoordinate();
-        return new Rectangle2D.Double(p.x, p.y, getSize(), getSize());
-    }
 }

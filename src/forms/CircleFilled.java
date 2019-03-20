@@ -9,9 +9,8 @@ import view.Bouncable;
 import view.Renderable;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
 
-public class CircleFilled extends AbstractBouncable {
+public class CircleFilled extends Circle {
     public CircleFilled() {
         super();
         this.color = Color.blue;
@@ -30,9 +29,4 @@ public class CircleFilled extends AbstractBouncable {
         };
     }
 
-    @Override
-    public Shape getShape() {
-        Point p = getBouncableCoordinate();
-        return new Ellipse2D.Double(p.x, p.y, getSize(), getSize());
-    }
 }
