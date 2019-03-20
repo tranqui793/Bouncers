@@ -10,12 +10,19 @@ import view.Renderable;
 
 import java.awt.*;
 
+/**
+ * Classe représentant tout les carrés avec bord
+ */
 public class SquareBordered extends Square {
     public SquareBordered() {
         super();
         this.color = Color.red;
     }
 
+    /**
+     * permet de créer un carré avec bord
+     * @return renderable
+     */
     @Override
     public Renderable getRenderer() {
         return new Renderable() {

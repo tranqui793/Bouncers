@@ -31,11 +31,17 @@ public abstract class AbstractBouncable implements Bouncable {
         speed = rand.nextInt(SIZE_BOUNCABLE_MIN);
     }
 
+    /**
+     * permet de dessiner les objets
+     */
     @Override
     public void draw() {
         getRenderer().display(display.getGraphics(), this);
     }
 
+    /**
+     * Fonction qui permet de faire le deplacement de chaque boules
+     */
     @Override
     public void move() {
         int oldX = bouncableCoordinate.x;

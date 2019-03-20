@@ -10,12 +10,19 @@ import view.Renderable;
 
 import java.awt.*;
 
+/**
+ * Classe représentant tout les cercles remplis
+ */
 public class CircleFilled extends Circle {
     public CircleFilled() {
         super();
         this.color = Color.blue;
     }
 
+    /**
+     * permet de créer un cercle avec rempli
+     * @return renderable
+     */
     @Override
     public Renderable getRenderer() {
         return new Renderable() {

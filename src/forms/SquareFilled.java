@@ -10,12 +10,19 @@ import view.Renderable;
 
 import java.awt.*;
 
+/**
+ * Classe représentant tout les carrés remplis
+ */
 public class SquareFilled extends Square {
     public SquareFilled() {
         super();
         this.color = Color.orange;
     }
 
+    /**
+     * permet de créer un carré rempli
+     * @return renderable
+     */
     @Override
     public Renderable getRenderer() {
         return new Renderable() {

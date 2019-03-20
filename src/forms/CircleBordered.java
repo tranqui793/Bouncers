@@ -10,12 +10,19 @@ import view.Renderable;
 
 import java.awt.*;
 
+/**
+ * Classe représentant tout les cercles avec bord
+ */
 public class CircleBordered extends Circle {
     public CircleBordered() {
         super();
         this.color = Color.green;
     }
 
+    /**
+     * permet de créer un cercle avec bord
+     * @return renderable
+     */
     @Override
     public Renderable getRenderer() {
         return new Renderable() {
